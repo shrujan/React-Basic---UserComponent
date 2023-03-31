@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import styles from './user-form.module.scss';
 
-const UserForm = () => {
+const UserForm = (props: any) => {
   const [ userName, setUserName ] = useState('');
   const [ userAge, setUserAge ] = useState('');
 
   const saveForm = () => {
-    console.log("save form")
+    console.log("save form");
+    props.updateUser({
+      userName,
+      userAge
+    })
+    
   }
 
   return (
