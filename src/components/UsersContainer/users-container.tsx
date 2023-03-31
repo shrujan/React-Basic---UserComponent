@@ -1,12 +1,15 @@
 import { useState } from "react"
 import { UserCardContainer } from "../UserCardContainer/user-card-coontainer"
-import UserForm from "../UserFormComponent/user-form"
+import UserForm from "../UserFormComponent/user-form";
+
+interface UserInfo { userName: string, useAge: number }
 
 export const UsersContainer = () => {
-  const [ userList, updateUserList ] = useState<{ userName: string, useAge: number }[]>([]);
+  const [ userList, updateUserList ] = useState<UserInfo[]>([]);
 
-  const updateList = (userData: any) => {
-    updateUserList([ ...userList, userData])
+  const updateList = (userData: UserInfo) => {
+    updateUserList([ ...userList, userData]);
+    
   }
 
   return (

@@ -6,12 +6,12 @@ const UserForm = (props: any) => {
   const [ userAge, setUserAge ] = useState('');
 
   const saveForm = () => {
-    console.log("save form");
     props.updateUser({
       userName,
       userAge
     })
-    
+    setUserName('');
+    setUserAge('');
   }
 
   return (
