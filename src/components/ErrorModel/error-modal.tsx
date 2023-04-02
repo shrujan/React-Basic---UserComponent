@@ -1,3 +1,4 @@
+import { Button } from '../UI/button';
 import styles from './error-modal.module.scss';
 
 export const ErrorModal = (props: any) => {
@@ -18,7 +19,8 @@ export const ErrorModal = (props: any) => {
         <section>
           { props.errorMessage }
         </section>
-        <button onClick={ closeError }>Okay</button>
+        {/* <button onClick={ closeError }>Okay</button> */}
+        <Button onClick={ closeError }>Okay</Button>
       </div>
     </section>
   )
