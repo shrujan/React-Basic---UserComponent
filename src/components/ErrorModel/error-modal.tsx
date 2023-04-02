@@ -11,7 +11,7 @@ export const ErrorModal = (props: any) => {
   }
   return (
     <section className={ styles['error-modal'] }>
-      <div className={ styles['error-modal'] }></div>
+      <div className={ styles['error-modal'] } onClick={ closeError }></div>
       <div className={ styles['error-message']}>
         <div>
           Invalid Input

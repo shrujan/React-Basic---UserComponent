@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.scss';
 import { UsersContainer } from './components/UsersContainer/users-container';
 import { ErrorModal } from './components/ErrorModel/error-modal';
