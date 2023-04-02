@@ -4,7 +4,7 @@ import styles from './user-form.module.scss';
 
 const UserForm = (props: any) => {
   const [ userName, setUserName ] = useState('');
-  const [ userAge, setUserAge ] = useState('');
+  const [ userAge, setUserAge ]   = useState('');
 
   const saveForm = (event: any) => {
     props.updateUser({
@@ -27,7 +27,6 @@ const UserForm = (props: any) => {
           <label htmlFor='userAge'>User Age</label>
           <input id='userAge' type="number" value={ userAge } onChange={ e => setUserAge(e.target.value) }></input>
         </div>
-        {/* <button type='submit'>Add User</button> */}
         <Button type={ 'submit' }>Add User</Button>
       </form>
       

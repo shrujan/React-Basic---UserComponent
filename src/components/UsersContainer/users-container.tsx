@@ -8,14 +8,14 @@ export const UsersContainer = (props: any) => {
   const [ userList, updateUserList ] = useState<UserInfo[]>([]);
 
   const updateList = (userData: UserInfo) => {
-    if (!userData.userAge || !userData.userName) {
+    if (!userData.userAge || !userData.userName.trim().length) {
       props.showError({
         showError: true,
         errorMessage: "User name and age are mandatory"
       });
       return;
     }
-    if (userData.userAge < 0 || userData.userAge > 120) { 
+    if (userData.userAge < 1 || userData.userAge > 120) { 
       props.showError({
         showError: true,
         errorMessage: "Enter valid user age (1 - 120)"
