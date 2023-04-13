@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import styles from './user-container.module.scss'
 import { UserCardContainer } from "../UserCardContainer/user-card-coontainer"
 import UserForm from "../UserFormComponent/user-form";
 
@@ -31,7 +32,7 @@ export const UsersContainer = (props: any) => {
   }
 
   return (
-    <main>
+    <main className={ styles['user-container'] }>
       <UserForm updateUser={ updateList }></UserForm>
       {
         userList.length ? <UserCardContainer userList={ userList }></UserCardContainer> : null

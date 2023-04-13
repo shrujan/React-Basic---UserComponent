@@ -1,27 +1,18 @@
-import { useState } from 'react';
 import './App.scss';
-import { UsersContainer } from './components/UsersContainer/users-container';
-import { ErrorModal } from './components/ErrorModel/error-modal';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Exercise1 } from './Routing/Excercise1';
+import { Home } from './Routing/Home';
 
-interface ErrorState {
-  showError: boolean,
-  errorMessage: string
-}
+const router = createBrowserRouter([
+  { path: '/',           element: <Home /> },
+  { path: '/exercise-1', element: <Exercise1 /> },
+  // { path: '/exercise-1', element: <Exercise1 /> },
+])
 
 function App() {
-  const [ error, updateErrorState ] = useState<ErrorState>();
-
-  const showError = (state: ErrorState) => {
-   updateErrorState(state) 
-  }
-
   return (
     <div className="App">
-      {
-        error?.showError ? <ErrorModal errorMessage={ error?.errorMessage } showError={ showError }></ErrorModal> : null
-      }
-      
-      <UsersContainer showError={ showError }></UsersContainer>
+      <RouterProvider router={ router } />
     </div>
   );
 }
