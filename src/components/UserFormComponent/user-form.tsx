@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button } from '../UI/button';
 import styles from './user-form.module.scss';
+import { Button } from '../UI/button';
 
 const UserForm = (props: any) => {
   const [ userName, setUserName ] = useState('');
