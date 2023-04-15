@@ -8,9 +8,19 @@ export const UseEffectLoginForm = () => {
 
   useEffect(() => {
     // will get triggered and executed when username or password changes
-    setFormValididity(
-      (userName.trim().length > 0 && password.trim().length > 3)
-    )
+    const timeoutIdentifier = setTimeout(() => {
+      console.log('Check valididty')
+      setFormValididity(
+        (userName.trim().length > 0 && password.trim().length > 3)
+      )
+    }, 500)
+    
+    // this return function will not run the first time the useEffect runs - ie when the page first loads.
+    return () => {
+      console.log('Cleanup')
+      // this will run from the second time the useEffect is run
+      clearTimeout(timeoutIdentifier)
+    }
   }, [ userName, password ])
 
   return <section>
