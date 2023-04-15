@@ -7,6 +7,11 @@ export const UseEffectLoginForm = () => {
   const [ isValidForm, setFormValididity ] = useState(false);
 
   useEffect(() => {
+    // this will run every time the component is run - ie for every change
+    console.log('Basic use effect - rarely used')
+  })
+
+  useEffect(() => {
     // will get triggered and executed when username or password changes
     const timeoutIdentifier = setTimeout(() => {
       console.log('Check valididty')
@@ -21,7 +26,7 @@ export const UseEffectLoginForm = () => {
       // this will run from the second time the useEffect is run
       clearTimeout(timeoutIdentifier)
     }
-  }, [ userName, password ])
+  }, [ userName, password ]) // username and password are dependecnies - so this useEffect will run when either username or password changes
 
   return <section>
     <form>
