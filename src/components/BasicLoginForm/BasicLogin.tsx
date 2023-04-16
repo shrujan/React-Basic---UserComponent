@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export const UseReducerLoginForm = () => {
+export const BasicLoginForm = () => {
   // use Usereducer when we have a scenario where one state depends on another state 
   // in the below scenario userName and isUserNameValid are interlinked similarly for password and isPasswordValid
 

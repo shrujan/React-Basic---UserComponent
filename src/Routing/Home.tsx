@@ -5,6 +5,7 @@ export const Home = () => {
     <div>
       <Link to="/exercise-1">Excercise 1</Link>
       <Link to="/use-effect-login">UseEffect Login</Link>
+      <Link to="/basic-login">Basic Login Form</Link>
       <Link to="/use-reducer-login">UseReducer Login</Link>
     </div>
   )
