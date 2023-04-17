@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-
+// convert Basic Login form to use reducer to combine states
 export const UseReducerLoginForm = () => {
   // use Usereducer when we have a scenario where one state depends on another state 
   // in the below scenario userName and isUserNameValid are interlinked similarly for password and isPasswordValid
@@ -37,11 +37,6 @@ export const UseReducerLoginForm = () => {
     setIsPasswordValid(password.trim().length > 3);
   };
 
-  // const checkFormValidity = () => {
-  //   console.log('usert' + userName,isUserNameValid, 'pass =' + password, isPasswordValid )
-  //   setFormValididity(isPasswordValid && isUserNameValid)
-  // }
-
   const submitLoginHandler = (event: any) => {
     console.log('Login user');
     event.preventDefault();
@@ -68,8 +63,7 @@ export const UseReducerLoginForm = () => {
           onBlur={ validatePasswordHandler }
         ></input>
       </div>
-      username = {userName + '==' + isUserNameValid} || password = {password + '==' + isPasswordValid}
-       =---isValidForm = {isValidForm + '*'}
+      
       <button type="submit" disabled={ !isValidForm }>Login</button>
     </form>
   </section>
