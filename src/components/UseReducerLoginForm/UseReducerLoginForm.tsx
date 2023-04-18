@@ -3,7 +3,6 @@ import { useReducer, useState } from "react";
 const userNameReducer = (state: any, action: any) => {
   // this is outside the component function as it does not need any data from within the compoenent -
   // All the data needed will be passed as params
-  console.log(state, action)
   if (action.type === 'USER_NAME') {
     return { value: action.value, isValid: action.value.length > 1 }
   }
