@@ -13,6 +13,19 @@ const userNameReducer = (state: any, action: any) => {
   return { value: "", isValid: false }
 }
 
+const passwordReducer = (state: any, action: any) => {
+  // this is outside the component function as it does not need any data from within the compoenent -
+  // All the data needed will be passed as params
+  if (action.type === 'PASSWORD') {
+    return { value: action.value, isValid: action.value.length > 1 }
+  }
+  if (action.type === "PASSWORD_BLUR") {
+    // state.value will always be the latest state
+    return { value: state.value, isValid: state.value.length > 1 }
+  }
+  return { value: "", isValid: false }
+}
+
 // convert Basic Login form to use reducer to combine states
 export const UseReducerLoginForm = () => {
   // use Usereducer when we have a scenario where one state depends on another state 
@@ -27,8 +40,13 @@ export const UseReducerLoginForm = () => {
     isValid: false
   })
 
-  const [ password, setPassword ]               = useState('');
-  const [ isPasswordValid, setIsPasswordValid ] = useState(false);
+  // const [ password, setPassword ]               = useState('');
+  // const [ isPasswordValid, setIsPasswordValid ] = useState(false);
+
+  const [ passwordState, passwordDispatcher ] = useReducer(passwordReducer, {
+    value: '',
+    isValid: false
+  })
 
   const [ isValidForm, setFormValididity ] = useState(false);
 
@@ -41,12 +59,16 @@ export const UseReducerLoginForm = () => {
 
     // setIsValidUser((event.target.value).length > 0)
     setFormValididity(
-      (event.target.value).length > 0 && password.length > 3
+      (event.target.value).length > 0 && passwordState.value.length > 3
     )
   }
 
   const handleUserPasswordState = (event: any) => {
-    setPassword(event.target.value);
+    // setPassword(event.target.value);
+    passwordDispatcher({
+      type: "PASSWORD",
+      value: event.target.value
+    })
     // setIsPasswordValid((event.target.value).length > 3);
     setFormValididity(
       userNameState.value.length > 0 && (event.target.value).length > 3
@@ -61,7 +83,10 @@ export const UseReducerLoginForm = () => {
   };
 
   const validatePasswordHandler = () => {
-    setIsPasswordValid(password.trim().length > 3);
+    // setIsPasswordValid(password.trim().length > 3);
+    passwordDispatcher({
+      type: "PASSWORD_BLUR"
+    })
   };
 
   const submitLoginHandler = (event: any) => {
@@ -85,7 +110,7 @@ export const UseReducerLoginForm = () => {
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          value={ password }
+          value={ passwordState.value }
           onChange={ (e: any) => { handleUserPasswordState(e) } }
           onBlur={ validatePasswordHandler }
         ></input>
