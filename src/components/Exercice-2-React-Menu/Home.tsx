@@ -1,7 +1,8 @@
-import { Header } from "./Header/Header"
+import { Header } from "./Header/Header";
+import style from './Home.module.scss'
 
 export const MenuHome = () => {
-  return <main>
+  return <main className={ style['menu-main'] }>
     <Header></Header>
   </main>
 }
