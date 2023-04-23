@@ -1,4 +1,8 @@
+import { Header } from "./Header/Header"
 
 export const MenuHome = () => {
-  return <div>Home</div>
+  return <main>
+    <Header></Header>
+    sdf
+  </main>
 }
