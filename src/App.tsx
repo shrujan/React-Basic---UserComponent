@@ -5,13 +5,15 @@ import { Home } from './Routing/Home';
 import { UseEffectLogin } from './Routing/UseEffectEx';
 import { UseReducerLogin } from './Routing/UserReducerEx';
 import { BasicLogin } from './Routing/LoginForm';
+import { ReactMenu } from './Routing/Exercice2ReactMenu';
 
 const router = createBrowserRouter([
-  { path: '/',                 element: <Home />           },
-  { path: '/exercise-1',       element: <Exercise1 />      },
-  { path: '/use-effect-login', element: <UseEffectLogin /> },
+  { path: '/',                  element: <Home />           },
+  { path: '/basic-login',       element: <BasicLogin />     },
+  { path: '/exercise-1',        element: <Exercise1 />      },
+  { path: '/react-menu',        element: <ReactMenu />      },
+  { path: '/use-effect-login',  element: <UseEffectLogin /> },
   { path: '/use-reducer-login', element: <UseReducerLogin />},
-  { path: '/basic-login', element: <BasicLogin />}
 ])
 
 function App() {
