@@ -2,4 +2,11 @@ main.menu-main {
   height: 100vh;
   width: 100vw;
   background-color: #3f3f3f;
+  > section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 8rem;
+  }
 }
