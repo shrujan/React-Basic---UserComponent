@@ -1,0 +1,15 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > div {
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      > input {
+        width: 50px;
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin IconSize($size: 20px) {
   height: $size;
   width: $size;
