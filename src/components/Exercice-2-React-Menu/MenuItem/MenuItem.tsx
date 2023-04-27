@@ -1,12 +1,16 @@
+import { useEffect } from 'react'
 import { Button } from '../Utils/Button'
 import styles from './MenuItem.module.scss'
 
-export const MenuItem = () => {
+export const MenuItem = (props: any) => {
+  useEffect(() => {
+    console.log(props)
+  })
   return (
     <div className={ styles['menu-item'] }>
       <div>
-        <h3>Sushi</h3>
-        <p>Fresh Fish and veggie</p>
+        <h3>{ props.item.name }</h3>
+        <p>{ props.item.description }</p>
         <span>$44</span>
       </div>
       <div>
@@ -15,7 +19,7 @@ export const MenuItem = () => {
           <input type='number' id='amount'></input>
         </div>
         <div>
-          <Button />
+          <Button text={ '+ Add' } classes={ 'filled' }/>
         </div>
       </div>
     </div>
