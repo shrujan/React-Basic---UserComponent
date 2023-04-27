@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styles from './user-card-container.module.scss'
 import { UserCard } from "../UserCard/user-card.component";
 
