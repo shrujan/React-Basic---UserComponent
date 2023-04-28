@@ -6,3 +6,9 @@
   line-height: $size;
   font-size: $size;
 }
+
+@mixin Price () {
+  font-size: 12px;
+  font-weight: 600;
+  color: $colorBrown;
+}

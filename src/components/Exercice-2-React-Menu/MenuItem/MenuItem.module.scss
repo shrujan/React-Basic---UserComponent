@@ -6,6 +6,9 @@
   justify-content: space-between;
   border-bottom: 1px solid $colorGray;
   > div {
+    > span {
+      @include Price();
+    }
     > div {
       display: flex;
       align-items: center;

@@ -22,7 +22,6 @@ export const MenuItem = (props: any) => {
     }
     // itemSelectedCtx.selectedItems = itemList; // this wont work because context thinks its the same old array and unchanged
     itemSelectedCtx.setSelectedItems([ ... itemList ]) // so we created a new array and now context detects it.
-    console.log(itemSelectedCtx)
   }
 
   return (
