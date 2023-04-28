@@ -1,17 +1,21 @@
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { Button } from '../Utils/Button'
 import styles from './MenuItem.module.scss'
+import { ItemsOrderedCtx } from '../Contexts/ItemsOrderedContext';
 
 export const MenuItem = (props: any) => {
-  useEffect(() => {
-    console.log(props)
-  })
+  const itemSelectedCtx = useContext(ItemsOrderedCtx);
+
+  const addItemHandler = () => {
+    
+  }
+
   return (
     <div className={ styles['menu-item'] }>
       <div>
         <h3>{ props.item.name }</h3>
         <p>{ props.item.description }</p>
-        <span>$44</span>
+        <span>${ props.item.price }</span>
       </div>
       <div>
         <div>
