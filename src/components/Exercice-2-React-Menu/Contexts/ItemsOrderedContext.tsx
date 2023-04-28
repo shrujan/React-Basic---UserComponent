@@ -5,7 +5,7 @@ export interface OrderedItems {
     description: string,
     name:        string,
     price:       number,
-    quantity?:   number
+    quantity:    number
 }
 export interface ItemList {
     selectedItems: OrderedItems[],

@@ -9,4 +9,8 @@ button.button {
   &.filled {
     background-color: $colorBrown;
   }
+  &.outline {
+    font-weight: 600;
+    color: $colorBrown;
+  }
 }

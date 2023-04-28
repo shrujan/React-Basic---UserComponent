@@ -18,13 +18,16 @@ section.cart-details {
 
   > main.selected-items {
     position: absolute;
-    > div {
+    background-color: $colorWhite;
+    border-radius: 10px;
+    > section {
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 15px 20px;
-      background-color: $colorWhite;
-      border-bottom: 1px solid $colorBrownDark;
+      justify-content: space-between;
+      min-width: 40vw;
+      margin: 15px 20px;
+      padding: 10px 0px;
+      border-bottom: 1px solid $colorBrown;
       > div {
         display: flex;
         flex-direction: column;
@@ -55,9 +58,26 @@ section.cart-details {
             // }
           }
         }
-        
+        &.button-container {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+        }
       }
       
+    }
+    > footer {
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+        margin: 15px 20px;
+        &:last-of-type {
+          justify-content: flex-end;
+          gap: 1rem;
+        }
+      }
     }
   }
 }
