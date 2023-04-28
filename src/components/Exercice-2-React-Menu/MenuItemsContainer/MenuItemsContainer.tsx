@@ -9,7 +9,7 @@ export const MenuItemsContainer = () => {
   return (
     <section className={ style['menu-items-container'] }>
       {
-        mealsList && mealsList.map(mealItem => <MenuItem item={ mealItem }></MenuItem>)
+        mealsList && mealsList.map(mealItem => <MenuItem key={ mealItem.id } item={ mealItem }></MenuItem>)
       }
       
     </section>

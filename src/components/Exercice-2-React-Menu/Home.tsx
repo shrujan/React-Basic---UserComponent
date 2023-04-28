@@ -6,11 +6,13 @@ import { Intro } from "./Intro/Intro";
 import { MenuItemsContainer } from "./MenuItemsContainer/MenuItemsContainer";
 
 export const MenuHome = () => {
+  const [ selectedItems, setSelectedItems ] = useState([]);
 
-  const [ selectedMenuItems, setSelectedMenuItems ] = useState([])
-  
   return <main className={ style['menu-main'] }>
-    <ItemsOrderedCtx.Provider value={ selectedMenuItems }>
+    <ItemsOrderedCtx.Provider value={ {
+        selectedItems:    selectedItems,
+        setSelectedItems: setSelectedItems
+      }}>
       <Header></Header>
       <section>
         <Intro></Intro>
