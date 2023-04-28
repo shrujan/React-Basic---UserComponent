@@ -5,23 +5,29 @@ import { ItemsOrderedCtx, OrderedItems } from '../Contexts/ItemsOrderedContext';
 
 export const MenuItem = (props: any) => {
   const itemSelectedCtx         = useContext(ItemsOrderedCtx);
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(1)
 
   const addItemHandler = () => {
-    if (!itemSelectedCtx) return
+    if (!itemSelectedCtx || quantity < 0) { return };
     const itemList = itemSelectedCtx.selectedItems;
     if (!itemList.length) {
-      itemList.push( { ...props.item, quantity: quantity } )
+      itemList.push( { ...props.item, quantity: quantity } ) // first item
     } else {
       const itemIndex = itemList.findIndex((item: OrderedItems) => item.id === props.item.id);
       if (itemIndex < 0) {
-        itemList.push({ ...props.item, quantity: quantity })
+        itemList.push({ ...props.item, quantity: quantity }) // new item
       } else {
-        itemList[itemIndex] = { ...props.item, quantity: quantity }
+        itemList[itemIndex] = { ...props.item, quantity: quantity } // if item previously added .. update qty
       }
     }
     // itemSelectedCtx.selectedItems = itemList; // this wont work because context thinks its the same old array and unchanged
     itemSelectedCtx.setSelectedItems([ ... itemList ]) // so we created a new array and now context detects it.
+  }
+
+  const quantityChangeHandler = (e: any) => {
+    const qty = Number(e.target.value);
+    if (qty < 0) { setQuantity(0); return }
+    setQuantity(qty)
   }
 
   return (
@@ -34,7 +40,7 @@ export const MenuItem = (props: any) => {
       <div>
         <div>
           <label htmlFor='amount'>Amount</label>
-          <input onChange={ e => setQuantity(Number(e.target.value)) } type='number' id='amount'></input>
+          <input onChange={ e => quantityChangeHandler(e) } min={ 0 } type='number' id='amount' value={quantity}></input>
         </div>
         <div>
           <Button clickHandler={ addItemHandler } text={ '+ Add' } classes={ 'filled' }/>
