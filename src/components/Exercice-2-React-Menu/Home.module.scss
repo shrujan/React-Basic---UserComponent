@@ -1,8 +1,9 @@
 @import './Common/common';
 
 main.menu-main {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
+  overflow: scroll;
   background-color: $colorBrownDark2;
   > section.menu-items {
     display: flex;
@@ -11,6 +12,6 @@ main.menu-main {
     flex-direction: column;
     position: relative;
     top: 8rem;
-    background-color: $colorBrownDark2;
+    // background-color: $colorBrownDark2;
   }
 }

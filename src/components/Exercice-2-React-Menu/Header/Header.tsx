@@ -10,7 +10,7 @@ export const Header = () => {
         <Cart></Cart>
       </header>
       <div className={ styles['main-image'] }>
-        <img src={ mealsImg } />
+        <img src={ mealsImg } alt='A delecious meal!' />
       </div>
     </>
     
