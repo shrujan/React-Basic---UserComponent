@@ -12,5 +12,9 @@ button.button {
   &.outline {
     font-weight: 600;
     color: $colorBrown;
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorBrown;
+    }
   }
 }
