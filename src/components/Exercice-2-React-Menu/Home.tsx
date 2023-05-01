@@ -6,10 +6,13 @@ import { Intro } from "./Intro/Intro";
 import { MenuItemsContainer } from "./MenuItemsContainer/MenuItemsContainer";
 import { ShowCartDetailsContext } from "./Contexts/ShowCartDetailsContext";
 import { CartDetailsModal } from "./CartDetailsModal/CartDetailsModal";
+import { createPortal } from "react-dom";
 
 export const MenuHome = () => {
   const [ selectedItems, setSelectedItems ] = useState([]);
-  const [ showCartDetails, setShowCartDetails] = useState(false)
+  const [ showCartDetails, setShowCartDetails] = useState(false);
+
+  const modalPlaceholder = document.getElementById('modal-placeholder')!;
 
   return <main className={ style['menu-main'] }>
     <ItemsOrderedCtx.Provider value={ {
@@ -20,7 +23,7 @@ export const MenuHome = () => {
         showCartDetails: showCartDetails,
         setShowCartDetails: setShowCartDetails
       }}>
-        { showCartDetails && <CartDetailsModal></CartDetailsModal> }
+        { showCartDetails && createPortal(<CartDetailsModal></CartDetailsModal>, modalPlaceholder) }
         <Header></Header>
       </ShowCartDetailsContext.Provider>
       <section className={ style['menu-items'] }>
