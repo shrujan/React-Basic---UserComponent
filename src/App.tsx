@@ -6,6 +6,7 @@ import { UseEffectLogin } from './Routing/UseEffectEx';
 import { UseReducerLogin } from './Routing/UserReducerEx';
 import { BasicLogin } from './Routing/LoginForm';
 import { ReactMenu } from './Routing/Exercice2ReactMenu';
+import StarWarsApi from './Routing/Exercise-API';
 
 const router = createBrowserRouter([
   { path: '/',                  element: <Home />           },
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   { path: '/react-menu',        element: <ReactMenu />      },
   { path: '/use-effect-login',  element: <UseEffectLogin /> },
   { path: '/use-reducer-login', element: <UseReducerLogin />},
+  { path: '/star-wars',         element: <StarWarsApi />    },
 ])
 
 function App() {

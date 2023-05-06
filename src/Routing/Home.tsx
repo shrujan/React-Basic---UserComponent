@@ -9,6 +9,7 @@ export const Home = () => {
       <Link to="/basic-login">Basic Login Form</Link>
       <Link to="/use-reducer-login">UseReducer Login</Link>
       <Link to="/React-Menu">React menu - EX2</Link>
+      <Link to="/star-wars">Star Wars APIs - EX3</Link>
     </div>
   )
 }
