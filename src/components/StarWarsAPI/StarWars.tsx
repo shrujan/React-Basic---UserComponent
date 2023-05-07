@@ -1,4 +1,5 @@
-import MoviesList from './MovieList';
+import { useEffect, useState } from 'react';
+import MoviesList from './MovieList/MovieList';
 import styles from './StarWars.module.scss';
 
 const StarWars = () => {
@@ -16,6 +17,25 @@ const StarWars = () => {
       releaseDate: '2021-05-19',
     },
   ];
+
+  const [ movieList, setMovieList ] = useState([]);
+
+  const fetchMovies = () => {
+    fetch('https://swapi.dev/api/films')
+    .then((response) => {
+      return response.json()
+    })
+    .then((data: any) => {
+      if (data) {
+        console.log(data)
+        setMovieList(data.results)
+      }
+    })
+  }
+
+  useEffect(() => {
+    fetchMovies();
+  }, [])
   
   return (
     <main className={ styles['star-wars'] }>
@@ -23,7 +43,7 @@ const StarWars = () => {
         <button>Fetch Movies</button>
       </section>
       <section>
-        <MoviesList movies={dummyMovies} />
+        <MoviesList movies={ movieList } />
       </section>
     </main>
   )
