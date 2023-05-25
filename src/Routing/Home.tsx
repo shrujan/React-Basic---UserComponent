@@ -10,6 +10,7 @@ export const Home = () => {
       <Link to="/use-reducer-login">UseReducer Login</Link>
       <Link to="/React-Menu">React menu - EX2</Link>
       <Link to="/star-wars">Star Wars APIs - EX3</Link>
+      <Link to="/react-forms">React Forms</Link>
     </div>
   )
 }
