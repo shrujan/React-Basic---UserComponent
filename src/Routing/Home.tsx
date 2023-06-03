@@ -11,6 +11,7 @@ export const Home = () => {
       <Link to="/React-Menu">React menu - EX2</Link>
       <Link to="/star-wars">Star Wars APIs - EX3</Link>
       <Link to="/react-forms">React Forms</Link>
+      <Link to="/reducer-user-list">React Reducer - User List</Link>
     </div>
   )
 }

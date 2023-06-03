@@ -1,0 +1,17 @@
+
+.user-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+
+  > button {
+    color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #7439b7;
+    cursor: pointer;
+  }
+}

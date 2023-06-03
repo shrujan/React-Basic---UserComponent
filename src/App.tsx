@@ -8,6 +8,7 @@ import { BasicLogin } from './Routing/LoginForm';
 import { ReactMenu } from './Routing/Exercice2ReactMenu';
 import StarWarsApi from './Routing/Exercise-API';
 import BasicReactForms from './Routing/ReactForms';
+import UserList from './Routing/UserList';
 
 const router = createBrowserRouter([
   { path: '/',                  element: <Home />           },
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   { path: '/use-reducer-login', element: <UseReducerLogin />},
   { path: '/star-wars',         element: <StarWarsApi />    },
   { path: '/basic-react-forms', element: <BasicReactForms />},
+  { path: '/reducer-user-list', element: <UserList />       },
 ])
 
 function App() {
