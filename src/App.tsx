@@ -9,6 +9,7 @@ import { ReactMenu } from './Routing/Exercice2ReactMenu';
 import StarWarsApi from './Routing/Exercise-API';
 import BasicReactForms from './Routing/ReactForms';
 import UserList from './Routing/UserList';
+import ReduxCounterEx from './Routing/ReduxExHome';
 
 const router = createBrowserRouter([
   { path: '/',                  element: <Home />           },
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   { path: '/star-wars',         element: <StarWarsApi />    },
   { path: '/basic-react-forms', element: <BasicReactForms />},
   { path: '/reducer-user-list', element: <UserList />       },
+  { path: '/redux-counter',     element: <ReduxCounterEx /> },
 ])
 
 function App() {
