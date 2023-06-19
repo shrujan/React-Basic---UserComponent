@@ -1,3 +1,4 @@
+import { type } from "os";
 import { useSelector, useDispatch } from "react-redux";
 
 
@@ -12,18 +13,29 @@ const CounterDisplay = () => {
   const dispatch = useDispatch();
 
   const incrementCounter = () => {
-    dispatch({ type: 'increment' });
+    dispatch({ type: 'increment' }); // dispatch needs type
   }
   
   const decrementCounter = () => {
     dispatch({ type: 'decrement' });
   }
 
+  const incrementCounterBy5 = () => {
+    dispatch({ type: 'incrementBy', count: 5 })
+  }
+
+  const decrementCounterBy5 = () => {
+    dispatch({ type: 'decrementBy', count: 5 })
+  }
+
+
   return <div>
     counter == { counter }
     <div>
       <button onClick={ incrementCounter }>Increment Counter</button>
       <button onClick={ decrementCounter }>Decrement Counter</button>
+      <button onClick={ incrementCounterBy5 }>Increment By 5 Counter</button>
+      <button onClick={ decrementCounterBy5 }>Decrement By 5 Counter</button>
     </div>
     <button>Toggle </button>
   </div>

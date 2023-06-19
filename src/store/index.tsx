@@ -7,6 +7,18 @@ const counterReducer = (state = { counter: 0 }, action: any) => {
     }
   }
 
+  if (action.type === 'incrementBy') {
+    return {
+      counter: state.counter + action.count // count is the action param which will be used in controller to dispatch action with payload
+    }
+  }
+
+  if (action.type === 'decrementBy') {
+    return {
+      counter: state.counter - action.count // count is the action param which will be used in controller to dispatch action with payload
+    }
+  }
+
   if (action.type === 'decrement') {
     return {
       counter: state.counter - 1
