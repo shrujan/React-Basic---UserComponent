@@ -10,19 +10,20 @@ import StarWarsApi from './Routing/Exercise-API';
 import BasicReactForms from './Routing/ReactForms';
 import UserList from './Routing/UserList';
 import ReduxCounterEx from './Routing/ReduxExHome';
+import ReduxToolkitCounterEx from './Routing/ReduxToolkitExHome';
 
 const router = createBrowserRouter([
-  { path: '/',                      element: <Home />           },
-  { path: '/basic-login',           element: <BasicLogin />     },
-  { path: '/exercise-1',            element: <Exercise1 />      },
-  { path: '/react-menu',            element: <ReactMenu />      },
-  { path: '/use-effect-login',      element: <UseEffectLogin /> },
-  { path: '/use-reducer-login',     element: <UseReducerLogin />},
-  { path: '/star-wars',             element: <StarWarsApi />    },
-  { path: '/basic-react-forms',     element: <BasicReactForms />},
-  { path: '/reducer-user-list',     element: <UserList />       },
-  { path: '/redux-counter',         element: <ReduxCounterEx /> },
-  { path: '/redux-counter-toolkit', element: <ReduxCounterEx /> },
+  { path: '/',                      element: <Home />                  },
+  { path: '/basic-login',           element: <BasicLogin />            },
+  { path: '/exercise-1',            element: <Exercise1 />             },
+  { path: '/react-menu',            element: <ReactMenu />             },
+  { path: '/use-effect-login',      element: <UseEffectLogin />        },
+  { path: '/use-reducer-login',     element: <UseReducerLogin />       },
+  { path: '/star-wars',             element: <StarWarsApi />           },
+  { path: '/basic-react-forms',     element: <BasicReactForms />       },
+  { path: '/reducer-user-list',     element: <UserList />              },
+  { path: '/redux-counter',         element: <ReduxCounterEx />        },
+  { path: '/redux-counter-toolkit', element: <ReduxToolkitCounterEx /> },
 ])
 
 function App() {

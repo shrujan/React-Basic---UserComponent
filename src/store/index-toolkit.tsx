@@ -42,8 +42,8 @@ const counterSlice = createSlice({
 
 // makes merging multiple reducers easier
 const store = configureStore({
-  // reducer: counterSlice.reducer // pass global state slice's reducer
-  reducer: { counter: counterSlice.reducer } // we can also pass map of reducers and it will get merged into one big reducer
+  reducer: counterSlice.reducer // pass global state slice's reducer
+  // reducer: { counter: counterSlice.reducer } // we can also pass map of reducers and it will get merged into one big reducer
 })
 
 export const actions = counterSlice.actions;
