@@ -13,6 +13,7 @@ export const Home = () => {
       <Link to="/react-forms">React Forms</Link>
       <Link to="/reducer-user-list">React Reducer - User List</Link>
       <Link to="/redux-counter">React Redux - Counter</Link>
+      <Link to="/redux-counter-toolkit">React Redux Toolkit - Counter</Link>
     </div>
   )
 }

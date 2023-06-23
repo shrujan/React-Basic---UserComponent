@@ -1,5 +1,8 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
+interface ByAction {
+  payload: number;
+}
 
 // createSlice - more powerfull than createReducer
 
@@ -21,11 +24,11 @@ const counterSlice = createSlice({
       // we can mutate the state because toolkit has emmer and internally clones object and creates new state
       state.counter--
     },
-    incrementBy(state, action: any) {
-      state.counter = state.counter + action.count; // count is the action param which will be used in controller to dispatch action with payload
+    incrementBy(state, action: ByAction) {
+      state.counter = state.counter + action.payload; // count is the action param which will be used in controller to dispatch action with payload
     },
-    decrementBy(state, action: any) {
-      state.counter = state.counter - action.count;
+    decrementBy(state, action: ByAction) {
+      state.counter = state.counter - action.payload;
     },
     toggleCounter(state) {
       state.showCounter = !state.showCounter
