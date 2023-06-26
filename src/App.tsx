@@ -11,6 +11,7 @@ import BasicReactForms from './Routing/ReactForms';
 import UserList from './Routing/UserList';
 import ReduxCounterEx from './Routing/ReduxExHome';
 import ReduxToolkitCounterEx from './Routing/ReduxToolkitExHome';
+import ReduxToolkitCart from './Routing/ReduxToolkitCart';
 
 const router = createBrowserRouter([
   { path: '/',                      element: <Home />                  },
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
   { path: '/reducer-user-list',     element: <UserList />              },
   { path: '/redux-counter',         element: <ReduxCounterEx />        },
   { path: '/redux-counter-toolkit', element: <ReduxToolkitCounterEx /> },
+  { path: '/redux-toolkit-cart',    element: <ReduxToolkitCart />      }
 ])
 
 function App() {
