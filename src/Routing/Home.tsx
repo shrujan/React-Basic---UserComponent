@@ -14,6 +14,7 @@ export const Home = () => {
       <Link to="/reducer-user-list">React Reducer - User List</Link>
       <Link to="/redux-counter">React Redux - Counter</Link>
       <Link to="/redux-counter-toolkit">React Redux Toolkit - Counter</Link>
+      <Link to="/redux-toolkit-cart">React Redux Toolkit - Cart</Link>
     </div>
   )
 }

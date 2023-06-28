@@ -1,6 +1,10 @@
+import { Provider } from "react-redux";
+import { store } from "../../store/cart";
 
 const ToolkitCartEx = () => {
-  return <div></div>
+  return <Provider store={ store }>
+            <section>Cart</section>
+         </Provider>
 }
 
 export default ToolkitCartEx;
