@@ -1,7 +1,10 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const sliceInitialState = {
-  count: 0
+  cartItems: [],
+  amount: 0,
+  total: 0,
+  isLoading: true
 }
 
 const slice = createSlice({
