@@ -7,14 +7,20 @@ const sliceInitialState = {
   isLoading: true
 }
 
+const cartReducer = () => {
+  
+}
+
 const slice = createSlice({
   name: "cart",
   initialState: sliceInitialState,
   reducers: {
-    
+    cart: cartReducer
   }
 })
 
 export const store = configureStore({
-  reducer: slice.reducer
+  reducer: {
+    cart: slice.reducer
+  }
 })
