@@ -1,6 +1,6 @@
 
-import { useSelector } from 'react-redux'
-import styles from './Cart.module.scss'
+import { useSelector } from 'react-redux';
+import styles from './Cart.module.scss';
 
 const Navbar = () => {
   const { amount } = useSelector((store: any) => store.cart);
