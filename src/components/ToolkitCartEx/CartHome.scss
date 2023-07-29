@@ -119,6 +119,9 @@ Navbar
   margin-top: 5rem;
 }
 nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: var(--clr-primary);
   padding: 1.25rem 2rem;
 }
