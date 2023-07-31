@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className={ styles['nav-container'] }>
       <CartIcon />
       <div className={ styles['amount-container'] }>
-        0
+        { amount }
       </div>
     </div>
   </nav>
