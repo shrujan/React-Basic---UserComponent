@@ -59,12 +59,10 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: sliceInitialState,
   reducers: {
-    cart: cartReducer,
+    cart:      cartReducer,
     clearCart: clearCart
   }
 })
-
-console.log(cartSlice)
 
 export const store = configureStore({
   reducer: {
