@@ -15,7 +15,8 @@ const CartContainer = () => {
           <h4 className={ styles['empty-cart'] }>Your bag is empty</h4>
         </header>
       </section>
-   } else {
+   }
+  
     return <section className={ styles['cart'] }>
       <header>
         <h2>Your Bag</h2>
@@ -26,8 +27,16 @@ const CartContainer = () => {
           })
         }
       </div>
+      <footer>
+        <hr />
+        <div className={ styles['cart-total'] }>
+          <h4>
+            Total <span>${ total }</span>
+          </h4>
+        </div>
+        <button className={ styles['btn'] + ' ' +styles['btn-clear'] }>Clear Cart</button>
+      </footer>
     </section>
-   }
 }
 
 export default CartContainer
